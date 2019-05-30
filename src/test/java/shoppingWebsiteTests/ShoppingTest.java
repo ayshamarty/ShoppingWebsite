@@ -10,11 +10,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ShoppingTests {
+public class ShoppingTest {
 	public static WebDriver driver;
 
 	@Before
@@ -51,7 +50,6 @@ public class ShoppingTests {
 
 		WebElement checkOut = driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a"));
 		WebDriverWait waitHover = new WebDriverWait(driver, 20);
-		Actions action = new Actions(driver);
 
 		checkOut.click();
 		checkOut = driver.findElement(By.id("email"));
@@ -70,6 +68,7 @@ public class ShoppingTests {
 				By.xpath("//*[@id=\"center_column\"]/ul/li[3]/div/div[2]/div[2]/a[1]/span")));
 		checkOut = driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[3]/div/div[2]/div[2]/a[1]/span"));
 		checkOut.click();
+
 		waitHover.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]")));
 		checkOut = driver.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a/span"));
